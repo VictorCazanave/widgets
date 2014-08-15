@@ -56,7 +56,7 @@ header {
     font-weight: 200;
 
     a {
-      display: block;
+      display: inline-block;
       margin-top: 1em;
     }
   }
@@ -67,6 +67,14 @@ section {
 
   h2 {
     font-size: 1.5em;
+  }
+
+  form {
+    margin-bottom: 1em;
+  }
+
+  q {
+    font-style: italic;
   }
 }
 
