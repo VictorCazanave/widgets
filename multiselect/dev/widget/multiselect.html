@@ -8,6 +8,6 @@
       <input ng-model="word" ng-keydown="keydown($event)" type="text" class="MS_input" id="MS_input" autofocus>
     </li>
   </ul>
-  <!-- <span class="MS_error">{{error}}</span> -->
+  <span ng-show="showError" class="MS_error">{{error}}</span>
   <span class="MS_input" id="MS_words-width">{{word}}</span>
 </form>

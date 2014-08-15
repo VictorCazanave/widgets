@@ -7,16 +7,17 @@ app.directive('ngMultiselect', function() {
     link: function(scope, element, attrs) {
       scope.word = "";
       scope.words = ["val1", "val2"];
-      //scope.error = "";
+      scope.showError = false;
+      scope.error = "Already added !";
 
       scope.addWord = function() {
-        //scope.error = "";
+        scope.showError = false;
         if (scope.word !== "") {
           if (scope.words.indexOf(scope.word) === -1) {
             scope.words.push(scope.word);
             scope.word = "";
           } else {
-            //scope.error = "Already added";
+            scope.showError = true;
           }
         }
       };
@@ -30,14 +31,13 @@ app.directive('ngMultiselect', function() {
       };
 
       scope.keydown = function(event) {
-        //scope.error = "";
+        scope.showError = false;
         if (scope.word === "" && scope.words.length > 0 && event.keyCode === 8) {
           scope.removeLastWord();
         }
       };
 
       scope.getWordsWidth = function() {
-        //console.log(angular.element(document.querySelector('#width'))[0].offsetWidth);
         return angular.element(document.querySelector('#MS_words-width'))[0].offsetWidth;
       };
     }
