@@ -4,11 +4,12 @@
 
 $width: 500px;
 $color: #333333;
-$font-family: Helvetica, Arial, sans-serif;
+$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $input-border: 1px solid #BBBBBB;
 $word-border: 1px solid #DDDDDD;
 $word-border-radius: 2px;
 $word-bg-color: #EEEEEE;
+$word-font-weight: 200;
 $remove-color: #BBBBBB;
 $error-color: #EE5F5B;
 
@@ -26,10 +27,12 @@ $error-color: #EE5F5B;
   border: $word-border;
   border-radius: $word-border-radius;
   background-color: $word-bg-color;
+  font-weight: $word-font-weight;
 }
 
 .MS_remove {
   color: $remove-color;
+  vertical-align: top;
 
   &:hover {
     color: inherit;

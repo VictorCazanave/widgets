@@ -1,8 +1,8 @@
 # External libraries
-*/**/lib
+**/lib
 
 # Generated CSS
 *.css
 
 # SASS cache
-*/**/.sass-cache
+**/.sass-cache
