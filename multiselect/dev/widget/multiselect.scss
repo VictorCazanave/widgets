@@ -1,0 +1,68 @@
+/* --- variables --- */
+$width: 500px;
+$border-color: #AAAAAA;
+$bg-color: #DDDDDD;
+$font-color: #333333;
+
+/* --- classes --- */
+.MS_form {
+  width: $width;
+  font-family: Helvetica, Arial, sans-serif;
+  color: $font-color;
+
+  * {
+    box-sizing: border-box; /* box model for all elements */
+  }
+}
+
+.MS_list {
+  border: 1px solid $border-color;
+  margin: 0;
+  padding: 0.2em;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    margin: 0.2em;
+    cursor: default;
+  }
+}
+
+.MS_word {
+  border: 1px solid $border-color;
+  padding: 0.1em 0.2em;
+  background-color: $bg-color;
+}
+
+.MS_remove {
+  cursor: pointer;
+
+  &:before {
+    content: "\2716";
+  }
+}
+
+.MS_flex {
+  flex: 1;
+  flex-basis: 1em;
+}
+
+.MS_input {
+  border: 0;
+  outline: 0;
+  padding: 0.1em 0.2em;
+  font-size: 1em;
+  font-family: inherit;
+  width: 100%;
+}
+
+/*
+.MS_error {
+  color: red;
+}
+*/
+
+#MS_words-width {
+  visibility: hidden;
+}
