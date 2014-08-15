@@ -1,22 +1,17 @@
-/* --- variables --- */
-$width: 500px;
-$border-color: #AAAAAA;
-$bg-color: #DDDDDD;
-$font-color: #333333;
+/*
+  Minimal styles to position and display elements correctly.
+  You can custom it and add your own styles.
+*/
 
-/* --- classes --- */
 .MS_form {
-  width: $width;
-  font-family: Helvetica, Arial, sans-serif;
-  color: $font-color;
 
   * {
-    box-sizing: border-box; /* box model for all elements */
+    box-sizing: border-box;
   }
 }
 
 .MS_list {
-  border: 1px solid $border-color;
+  border: 1px solid gray;
   margin: 0;
   padding: 0.2em;
   list-style: none;
@@ -30,12 +25,13 @@ $font-color: #333333;
 }
 
 .MS_word {
-  border: 1px solid $border-color;
+  border: 1px solid gray;
   padding: 0.1em 0.2em;
-  background-color: $bg-color;
+  background-color: LightGray;
 }
 
 .MS_remove {
+  font-size: 0.8em;
   cursor: pointer;
 
   &:before {
@@ -52,15 +48,15 @@ $font-color: #333333;
   border: 0;
   outline: 0;
   padding: 0.1em 0.2em;
+  width: 100%;
   font-size: 1em;
   font-family: inherit;
-  width: 100%;
 }
 
 .MS_error {
   display: block;
   margin-top: 1em;
-  color: #ee5f5b;
+  color: red;
 }
 
 #MS_words-width {

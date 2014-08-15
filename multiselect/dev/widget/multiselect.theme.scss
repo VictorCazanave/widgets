@@ -1,0 +1,41 @@
+/*
+  Example of a multiselect theme.
+*/
+
+$width: 500px;
+$color: #333333;
+$font-family: Helvetica, Arial, sans-serif;
+$input-border: 1px solid #BBBBBB;
+$word-border: 1px solid #DDDDDD;
+$word-border-radius: 2px;
+$word-bg-color: #EEEEEE;
+$remove-color: #BBBBBB;
+$error-color: #EE5F5B;
+
+.MS_form {
+  width: $width;
+  color: $color;
+  font-family: $font-family;
+}
+
+.MS_list {
+  border: $input-border;
+}
+
+.MS_word {
+  border: $word-border;
+  border-radius: $word-border-radius;
+  background-color: $word-bg-color;
+}
+
+.MS_remove {
+  color: $remove-color;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.MS_error {
+  color: $error-color;
+}

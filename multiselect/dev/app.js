@@ -6,7 +6,7 @@ app.controller('MainCtrl', ['$scope',
     $scope.words = '';
 
     $scope.$on('MS_EVENT-change', function(evt, values) {
-      $scope.words = values.join(',');
+      $scope.words = values.join(', ');
     });
   }
 ]);
