@@ -6,7 +6,7 @@ app.directive('ngMultiselect', function() {
     scope: {},
     link: function(scope, element, attrs) {
       scope.word = "";
-      scope.words = ["val1", "val2"];
+      scope.words = [];
       scope.showError = false;
       scope.error = "Already added !";
 
