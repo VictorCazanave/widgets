@@ -1,4 +1,4 @@
-Multiselect
+Multi-search
 =======
 
-A simple multiselect widget
+A simple multi-search widget built with AngularJS
