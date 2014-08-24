@@ -1,0 +1,83 @@
+/*
+  Minimal styles to position and display elements correctly.
+  You can custom it and add your own styles.
+*/
+
+.MS_form {
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.MS_list {
+  border: 1px solid gray;
+  margin: 0;
+  padding: 0.2em;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    margin: 0.2em;
+    cursor: default;
+  }
+}
+
+.MS_word {
+  border: 1px solid gray;
+  padding: 0.1em 0.2em;
+  background-color: LightGray;
+}
+
+.MS_remove {
+  font-size: 0.8em;
+  cursor: pointer;
+
+  &:before {
+    content: "\2716";
+  }
+}
+
+.MS_flex {
+  flex: 1;
+  flex-basis: 1em;
+}
+
+.MS_input {
+  border: 0;
+  outline: 0;
+  padding: 0.1em 0.2em;
+  width: 100%;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+.MS_error {
+  display: block;
+  margin-top: 1em;
+  color: red;
+}
+
+#MS_words-width {
+  visibility: hidden;
+}
+
+.MS_options {
+  border: 1px solid gray;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
+}
+
+.MS_option {
+
+  margin: 0;
+  padding: 0;
+
+}
+
+.MS_focus {
+  background-color: LightGray;
+}
