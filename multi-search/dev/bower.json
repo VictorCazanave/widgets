@@ -1,8 +1,8 @@
 {
-  "name": "multiselect",
+  "name": "multi-search",
   "version": "0.1.0",
   "authors": ["Victor Cazanave"],
-  "description": "A simple multiselect widget",
+  "description": "A simple multi-search widget",
   "license": "MIT",
   "private": false,
   "dependencies": {

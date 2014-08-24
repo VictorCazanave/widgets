@@ -1,7 +1,7 @@
-app.directive('ngMultiselect', function() {
+app.directive('ngMultiSearch', function() {
   return {
     restrict: 'AE',
-    templateUrl: 'widget/multiselect.html',
+    templateUrl: 'widget/multi-search.html',
     replace: true,
     scope: {},
     link: function(scope, element, attrs) {
