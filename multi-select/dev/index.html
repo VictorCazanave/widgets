@@ -3,33 +3,33 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="A simple multiselect widget" />
+  <meta name="description" content="A simple multi-select widget" />
   <meta name="author" content="Victor Cazanave" />
   <link rel="stylesheet" type="text/css" href="../../common/style/common.css">
-  <link rel="stylesheet" type="text/css" href="widget/multiselect.css">
-  <link rel="stylesheet" type="text/css" href="widget/multiselect.theme.css">
-  <title>Multiselect</title>
+  <link rel="stylesheet" type="text/css" href="widget/multi-select.css">
+  <link rel="stylesheet" type="text/css" href="widget/multi-select.theme.css">
+  <title>Multi-select</title>
 </head>
 
 <body ng-controller="MainCtrl">
   <header>
-    <h1>Multiselect</h1>
+    <h1>Multi-select</h1>
     <p>
-      This is an example of the multiselect widget built with AngularJS. It can be used as a multi words search input. Feel free to customize it and add features.<br/>
-      <a href="https://github.com/VictorCazanave/widgets/tree/dev/multiselect" title="See source code on GitHub" target="_blank">Source code</a>
+      This is an example of the multi-select widget built only with AngularJS (no jQuery). It can be used as a multi select input. Feel free to customize it and add features.<br/>
+      <a href="https://github.com/VictorCazanave/widgets/tree/dev/multi-select" title="See source code on GitHub" target="_blank">Source code</a>
     </p>
   </header>
   <section>
-    <ng-multiselect></ng-multiselect>
+    <ng-multi-select></ng-multi-select>
     <p>
-      <h2>Entered words</h2>
+      <h2>Selected words</h2>
       {{words}}
     </p>
   </section>
 
   <script type="text/javascript" src="lib/angular/angular.js"></script>
   <script type="text/javascript" src="app.js"></script>
-  <script type="text/javascript" src="widget/multiselect.js"></script>
+  <script type="text/javascript" src="widget/multi-select.js"></script>
 </body>
 
 </html>
