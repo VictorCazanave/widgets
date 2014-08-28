@@ -1,7 +1,7 @@
 app.directive('ngMultiSelect', function() {
   return {
     restrict: 'AE',
-    templateUrl: 'widget/multi-select.html',
+    templateUrl: 'widget/multi-select.tpl.html',
     replace: true,
     scope: {},
     link: function(scope, element, attrs) {
@@ -32,15 +32,16 @@ app.directive('ngMultiSelect', function() {
             scope.removeLastWord();
           }
         } else {
-          if (scope.options.length > 1 && event.keyCode === 40) { // down arrow
-            scope.scrollTo(scope.getNextOption());
-            scope.focused = scope.getNextOption();
-          } else if (scope.options.length > 1 && event.keyCode === 38) { // up arrow
-            scope.focused = scope.getPreviousOption();
-            scope.scrollTo(scope.focused);
-          } else {
+          // if (scope.options.length > 1 && event.keyCode === 40) { // down arrow
+          //   //scope.scrollTo(scope.getNextOption());
+          //   scope.focused = scope.getNextOption();
+          //   scope.scrollTo(scope.focused);
+          // } else if (scope.options.length > 1 && event.keyCode === 38) { // up arrow
+          //   scope.focused = scope.getPreviousOption();
+          //   scope.scrollTo(scope.focused);
+          // } else {
             scope.lookup();
-          }
+          //}
         }
       };
 
@@ -61,16 +62,8 @@ app.directive('ngMultiSelect', function() {
         scope.showOptions = true;
       };
 
-      scope.focusOption = function(option, event) {
+      scope.focusOption = function(option) {
         scope.focused = option;
-
-        var focused = angular.element(document.querySelector('.MS_focus'));
-        //console.log(focused);
-        if(focused.length > 0) {
-          focused[0].classList.remove('MS_focus');
-        }
-        //console.log(event.target.classList);
-        event.target.classList.add('MS_focus');
       };
 
       scope.hasFocus = function(option) {
@@ -104,21 +97,33 @@ app.directive('ngMultiSelect', function() {
         }
       };
 
-      scope.scrollTo = function(option) {
-        //console.log(option[0]);
-        var height = angular.element(document.querySelector('.MS_option'))[0].offsetHeight;
-        console.log(height);
-        var currentIndex = scope.options.indexOf(option);
-        if (currentIndex > 4) {
-          var scrollHeight = (currentIndex-4) * 10;
-          var optionsElt = angular.element(document.querySelector('.MS_options'))[0];
-          console.log(scrollHeight);
-          optionsElt.scrollTop = scrollHeight;
-          //console.log(optionsElt);
-          //console.log(optionsElt.scrollHeight);
-        }
-      };
+      // scope.scrollTo = function(option) {
+      //   //console.log(option[0]);
+      //   //var height = element(document.querySelector('.MS_option'))[0].offsetHeight;
+      //   //console.log(height);
+      //   var currentIndex = scope.options.indexOf(option);
+      //   console.log(currentIndex);
+      //   var optionsElt = angular.element(document.querySelector('.MS_options'))[0];
+      //   if (currentIndex > 4) {
+      //     var scrollHeight = (currentIndex - 4) * 31;
+      //     //console.log(scrollHeight);
+      //     optionsElt.scrollTop = scrollHeight;
+      //     //console.log(optionsElt);
+      //     //console.log(optionsElt.scrollHeight);
+      //   } else {
+      //     optionsElt.scrollTop = 0;
+      //   }
+      // };
 
     }
   };
 });
+
+// app.directive('msOption', function() {
+
+//   return {
+//     link: function(scope, element, attrs) {
+//       //console.log(element[0].offsetHeight);
+//     }
+//   };
+// });
