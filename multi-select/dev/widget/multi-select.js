@@ -63,6 +63,12 @@ app.directive('ngMultiSelect', function() {
       //   scope.showOptions = true;
       // };
 
+      scope.filterAlreadyAdded = function() {
+        return function(item) {
+          return scope.words.indexOf(item) === -1;
+        };
+      };
+
       scope.focusOption = function(option) {
         scope.focused = option;
       };
