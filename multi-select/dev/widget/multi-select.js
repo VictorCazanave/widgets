@@ -3,15 +3,13 @@ app.directive('ngMultiSelect', function() {
     restrict: 'AE',
     templateUrl: 'widget/multi-select.tpl.html',
     replace: true,
-    scope: {},
+    scope: {
+      options: '='
+    },
     link: function(scope, element, attrs) {
 
       scope.word = '';
       scope.words = [];
-      scope.showError = false;
-      scope.error = 'Already added !';
-      scope.refOptions = ['toto1', 'tata1', 'toto2', 'titi1', 'toto3', 'tata2', 'toto4', 'titi2', 'tata3', 'tata4'];
-      scope.options = scope.refOptions;
       scope.showOptions = false;
 
       scope.removeWord = function(index) {
@@ -40,8 +38,11 @@ app.directive('ngMultiSelect', function() {
           //   scope.focused = scope.getPreviousOption();
           //   scope.scrollTo(scope.focused);
           // } else {
-            scope.lookup();
-          //}
+          //scope.lookup();
+          scope.showOptions = true;
+          if (scope.filteredOptions.length > 0) {
+            scope.focused = scope.filteredOptions[0];
+          }
         }
       };
 
@@ -49,18 +50,18 @@ app.directive('ngMultiSelect', function() {
         return angular.element(document.querySelector('#MS_words-width'))[0].offsetWidth;
       };
 
-      scope.lookup = function() {
-        scope.options = [];
-        for (var i = 0; i < scope.refOptions.length; i++) {
-          if (scope.refOptions[i].indexOf(scope.word) > -1 && scope.words.indexOf(scope.refOptions[i]) === -1) {
-            scope.options.push(scope.refOptions[i]);
-          }
-        }
-        if (scope.options.length > 0) {
-          scope.focused = scope.options[0];
-        }
-        scope.showOptions = true;
-      };
+      // scope.lookup = function() {
+      //   scope.options = [];
+      //   for (var i = 0; i < scope.refOptions.length; i++) {
+      //     if (scope.refOptions[i].indexOf(scope.word) > -1 && scope.words.indexOf(scope.refOptions[i]) === -1) {
+      //       scope.options.push(scope.refOptions[i]);
+      //     }
+      //   }
+      //   if (scope.options.length > 0) {
+      //     scope.focused = scope.options[0];
+      //   }
+      //   scope.showOptions = true;
+      // };
 
       scope.focusOption = function(option) {
         scope.focused = option;
