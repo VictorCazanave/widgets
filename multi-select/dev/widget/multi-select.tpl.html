@@ -10,7 +10,7 @@
   </ul>
   <ul ng-show="showOptions" class="MS_options">
     <li ng-show="options.length === 0" class="MS_option MS_no-matches">No matches</li>
-    <li ng-repeat="option in options" ng-mouseover="focusOption(option, $event)" ng-click="addOption(option)" class="MS_option">
+    <li ng-repeat="option in options" ng-mouseover="focusOption(option)" ng-click="addOption(option)" class="MS_option" ng-class="{MS_focus:hasFocus(option)}">
       {{option}}
     </li>
   </ul>
