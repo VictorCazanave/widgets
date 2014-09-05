@@ -38,7 +38,7 @@ app.directive('ngMultiSelect', function() {
        * Add the option in the words list
        */
       scope.addOption = function(option) {
-        if (scope.options.length > 0 && scope.words.indexOf(option) === -1) {
+        if (scope.filteredOptions.length > 0 && scope.words.indexOf(option) === -1) {
           scope.words.push(option);
           scope.$emit('MS_EVENT-change', scope.words);
           scope.showOptions = false;
