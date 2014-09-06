@@ -14,7 +14,7 @@ app.directive('ngMultiSelect', function() {
       scope.showOptions = false;
 
       /**
-       * Remove the word from the words list
+       * Remove word from words list
        */
       scope.removeWord = function(index) {
         scope.words.splice(index, 1);
@@ -22,21 +22,21 @@ app.directive('ngMultiSelect', function() {
       };
 
       /**
-       * Focus the option in the drop down list
+       * Focus option in drop down list
        */
       scope.focusOption = function(option) {
         scope.focused = option;
       };
 
       /**
-       * Check if the option is focused
+       * Check if option is focused
        */
       scope.isFocused = function(option) {
         return scope.focused === option;
       };
 
       /**
-       * Add the option in the words list
+       * Add option in words list
        */
       scope.addOption = function(option) {
         if (scope.filteredOptions.length > 0 && scope.words.indexOf(option) === -1) {
@@ -48,7 +48,7 @@ app.directive('ngMultiSelect', function() {
       };
 
       /**
-       * Filter to check if the option has been already added in the words list
+       * Filter to check if option has been already added in words list
        */
       scope.filterAlreadyAdded = function() {
         return function(item) {
@@ -74,15 +74,20 @@ app.directive('ngMultiSelect', function() {
       };
 
       /**
-       * Manage the keyup events
+       * Manage keydown events
+       */
+      scope.keydown = function(event) {
+        if (scope.word === '' && scope.words.length > 0 && event.keyCode === 8) { // back space
+          removeLastWord();
+        }
+      };
+
+      /**
+       * Manage keyup events
        */
       scope.keyup = function(event) {
-        scope.showError = false;
         if (scope.word === '') {
           scope.showOptions = false;
-          if (scope.words.length > 0 && event.keyCode === 8) { // back space
-            removeLastWord();
-          }
         } else {
           if (scope.filteredOptions.length > 1 && event.keyCode === 40) { // down arrow
             scope.focused = getNextOption();
@@ -98,7 +103,7 @@ app.directive('ngMultiSelect', function() {
       };
 
       /**
-       * Remove the last word from the words list
+       * Remove the last word from words list
        */
       var removeLastWord = function() {
         scope.words.pop();
@@ -106,7 +111,7 @@ app.directive('ngMultiSelect', function() {
       };
 
       /**
-       * Get the next option in the filtered options list
+       * Get next option in filtered options list
        */
       var getNextOption = function() {
         var currentIndex = scope.filteredOptions.indexOf(scope.focused);
@@ -118,7 +123,7 @@ app.directive('ngMultiSelect', function() {
       };
 
       /**
-       * Get the previous option in the filtered options list
+       * Get previous option in filtered options list
        */
       var getPreviousOption = function() {
         var currentIndex = scope.filteredOptions.indexOf(scope.focused);
