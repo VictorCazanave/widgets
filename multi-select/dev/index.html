@@ -20,10 +20,10 @@
     </p>
   </header>
   <section>
-    <ng-multi-select options="options"></ng-multi-select>
+    <ng-multi-select options="cities" model="selectedCities" ></ng-multi-select>
     <p>
       <h2>Selected cities</h2>
-      {{words}}
+      {{selectedCities.join(", ")}}
     </p>
   </section>
 

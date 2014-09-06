@@ -3,8 +3,7 @@ var app = angular.module('app', []);
 app.controller('MainCtrl', ['$scope',
   function($scope) {
 
-    $scope.words = '';
-    $scope.options = ['New York',
+    $scope.cities = ['New York',
       'Los Angeles',
       'Chicago',
       'Houston',
@@ -56,8 +55,9 @@ app.controller('MainCtrl', ['$scope',
       'Raleigh'
     ];
 
-    $scope.$on('MS_EVENT-change', function(evt, values) {
-      $scope.words = values.join(', ');
-    });
+    //$scope.words = '';
+    // $scope.$on('MS_EVENT-change', function(evt, values) {
+    //   $scope.words = values.join(', ');
+    // });
   }
 ]);

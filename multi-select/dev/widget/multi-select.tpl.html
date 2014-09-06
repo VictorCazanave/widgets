@@ -10,7 +10,7 @@
   </ul>
   <ul ng-show="showOptions" class="MS_options">
     <li ng-show="filteredOptions.length === 0" class="MS_option MS_no-matches">No matches</li>
-    <li ng-repeat="option in filteredOptions = (options | filter:word | filter:filterAlreadyAdded())" ng-mouseover="focusOption(option)" ng-click="addOption(option)" class="MS_option" ng-class="{MS_focus:isFocused(option)}">
+    <li ng-repeat="option in filteredOptions = (options | filter:word | filter:filterAlreadyAdded()) | filter:filterHighlight()" ng-mouseover="focusOption(option)" ng-click="addOption(option)" class="MS_option" ng-class="{MS_focus:isFocused(option)}">
       {{option}}
     </li>
   </ul>

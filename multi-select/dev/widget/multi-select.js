@@ -4,7 +4,8 @@ app.directive('ngMultiSelect', function() {
     templateUrl: 'widget/multi-select.tpl.html',
     replace: true,
     scope: {
-      options: '='
+      options: '=',
+      words: '=model'
     },
     link: function(scope, element, attrs) {
 
@@ -17,7 +18,7 @@ app.directive('ngMultiSelect', function() {
        */
       scope.removeWord = function(index) {
         scope.words.splice(index, 1);
-        scope.$emit('MS_EVENT-change', scope.words);
+        //scope.$emit('MS_EVENT-change', scope.words);
       };
 
       /**
@@ -40,18 +41,28 @@ app.directive('ngMultiSelect', function() {
       scope.addOption = function(option) {
         if (scope.filteredOptions.length > 0 && scope.words.indexOf(option) === -1) {
           scope.words.push(option);
-          scope.$emit('MS_EVENT-change', scope.words);
+          //scope.$emit('MS_EVENT-change', scope.words);
           scope.showOptions = false;
           scope.word = '';
         }
       };
 
       /**
-       * Check if the option has already been added in the words list
+       * Filter to check if the option has been already added in the words list
        */
       scope.filterAlreadyAdded = function() {
         return function(item) {
           return scope.words.indexOf(item) === -1;
+        };
+      };
+
+      /**
+       * Filter to highlight the searched part
+       */
+      scope.filterHighlight = function() {
+        return function(item) {
+          return item.replace(scope.word, 'TOTO');
+          //return item.replace(new RegExp(scope.word, 'gi'), '<span class="MS_highlight">$&</span>');
         };
       };
 
@@ -91,7 +102,7 @@ app.directive('ngMultiSelect', function() {
        */
       var removeLastWord = function() {
         scope.words.pop();
-        scope.$emit('MS_EVENT-change', scope.words);
+        //scope.$emit('MS_EVENT-change', scope.words);
       };
 
       /**
