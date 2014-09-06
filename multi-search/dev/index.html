@@ -20,10 +20,10 @@
     </p>
   </header>
   <section>
-    <ng-multi-search></ng-multi-search>
+    <ng-multi-search model="search"></ng-multi-search>
     <p>
       <h2>Searched words</h2>
-      {{words}}
+      {{search.join(", ")}}
     </p>
   </section>
 
