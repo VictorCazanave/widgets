@@ -1,4 +1,4 @@
-app.directive('ngMultiSelect', function() {
+app.directive('ngMultiSelect', function($sce) {
   return {
     restrict: 'AE',
     templateUrl: 'widget/multi-select.tpl.html',
@@ -57,13 +57,13 @@ app.directive('ngMultiSelect', function() {
       };
 
       /**
-       * Filter to highlight the searched part
+       * Highlight the searched part
        */
-      scope.filterHighlight = function() {
-        return function(item) {
-          return item.replace(scope.word, 'TOTO');
-          //return item.replace(new RegExp(scope.word, 'gi'), '<span class="MS_highlight">$&</span>');
-        };
+      scope.highlight = function(text, search) {
+        if (!search) {
+          return $sce.trustAsHtml(text);
+        }
+        return $sce.trustAsHtml(text.replace(new RegExp(search, 'gi'), '<span class="MS_highlight">$&</span>'));
       };
 
       /**
