@@ -77,7 +77,7 @@ app.directive('ngMultiSelect', function($sce) {
        * Manage keydown events
        */
       scope.keydown = function(event) {
-        if (scope.word === '' && scope.words.length > 0 && event.keyCode === 8) { // back space
+        if (scope.word.length === 0 && scope.words.length > 0 && event.keyCode === 8) { // back space
           removeLastWord();
         }
       };
@@ -86,9 +86,15 @@ app.directive('ngMultiSelect', function($sce) {
        * Manage keyup events
        */
       scope.keyup = function(event) {
-        if (scope.word === '') {
-          scope.showOptions = false;
-        } else {
+        if (scope.word.length === 0) {
+          if (event.keyCode === 40 || event.keyCode === 38) {
+            scope.showOptions = true;
+          } else {
+            scope.showOptions = false;
+            scope.focused = undefined;
+          }
+        }
+        if (scope.word.length > 0 || scope.showOptions) {
           if (scope.filteredOptions.length > 1 && event.keyCode === 40) { // down arrow
             scope.focused = getNextOption();
           } else if (scope.filteredOptions.length > 1 && event.keyCode === 38) { // up arrow
@@ -100,6 +106,14 @@ app.directive('ngMultiSelect', function($sce) {
             }
           }
         }
+      };
+
+      /**
+       * Manage blur event
+       */
+      scope.blur = function() {
+        scope.showOptions = false;
+        scope.focused = undefined;
       };
 
       /**

@@ -5,7 +5,7 @@
       <span ng-click="removeWord($index)" class="MS_remove"></span>
     </li>
     <li ng-style="{'flex-basis': getWordsWidth() + 'px'}" class="MS_flex">
-      <input ng-model="word" ng-keydown="keydown($event)" ng-keyup="keyup($event)" type="text" class="MS_input" id="MS_input" autofocus>
+      <input ng-model="word" ng-keydown="keydown($event)" ng-keyup="keyup($event)" ng-blur="blur()" type="text" class="MS_input" id="MS_input" autofocus>
     </li>
   </ul>
   <ul ng-show="showOptions" class="MS_options">
