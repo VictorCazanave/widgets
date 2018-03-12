@@ -1,0 +1,11 @@
+{
+  "name": "multi-select",
+  "version": "0.1.0",
+  "authors": ["Victor Cazanave"],
+  "description": "A simple multi-select widget",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "angular": "1.2.21"
+  }
+}

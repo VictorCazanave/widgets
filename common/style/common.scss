@@ -1,0 +1,80 @@
+/*
+  Common styles for example pages
+*/
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6,
+p, a, img, blockquote, q,
+ol, ul, li,
+form, label,
+table, tr, th, td,
+header, menu, nav, footer,
+article, section, aside {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+header, menu, nav, footer,
+article, section, aside  {
+  display: block;
+}
+
+/* Global */
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 960px;
+  color: #333333;
+  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+}
+
+header {
+  border-radius: 6px;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  padding: 3em 2em;
+  background-color: #EEEEEE;
+
+  h1 {
+    margin-bottom: 0.5em;
+    font-size: 4em;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.5em;
+    font-weight: 200;
+
+    a {
+      display: inline-block;
+      margin-top: 1em;
+    }
+  }
+}
+
+section {
+  font-size: 1.2em;
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  form {
+    margin-bottom: 1em;
+  }
+
+  q {
+    font-style: italic;
+  }
+}
+

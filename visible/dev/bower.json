@@ -1,0 +1,11 @@
+{
+  "name": "visible",
+  "version": "0.1.0",
+  "authors": ["Victor Cazanave"],
+  "description": "A directive to show/hide an element using visibility CSS property",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "angular": "1.2.21"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A simple multi-search widget" />
+  <meta name="author" content="Victor Cazanave" />
+  <link rel="stylesheet" type="text/css" href="../../common/style/common.css">
+  <link rel="stylesheet" type="text/css" href="widget/multi-search.css">
+  <link rel="stylesheet" type="text/css" href="widget/multi-search.theme.css">
+  <title>Multi-search</title>
+</head>
+
+<body ng-controller="MainCtrl">
+  <header>
+    <h1>Multi-search</h1>
+    <p>
+      This is an example of the multi-search widget built only with AngularJS (no jQuery, no Bootstrap). It can be used as a multi words search input. Feel free to customize it and add features.<br/>
+      <a href="https://github.com/VictorCazanave/widgets/tree/dev/multi-search" title="See source code on GitHub" target="_blank">Source code</a>
+    </p>
+  </header>
+  <section>
+    <ng-multi-search model="search"></ng-multi-search>
+    <p>
+      <h2>Searched words</h2>
+      {{search.join(", ")}}
+    </p>
+  </section>
+
+  <script type="text/javascript" src="lib/angular/angular.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="widget/multi-search.js"></script>
+</body>
+
+</html>

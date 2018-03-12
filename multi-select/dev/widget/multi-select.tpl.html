@@ -1,0 +1,18 @@
+<form ng-submit="addOption(focused)" class="MS_form">
+  <ul ng-class="{MS_open: showOptions}" class="MS_list">
+    <li ng-repeat="word in words" class="MS_word">
+      <span>{{word}}</span>
+      <span ng-click="removeWord($index)" class="MS_remove"></span>
+    </li>
+    <li ng-style="{'flex-basis': getWordsWidth() + 'px'}" class="MS_flex">
+      <input ng-model="word" ng-keydown="keydown($event)" ng-keyup="keyup($event)" ng-blur="blur()" type="text" class="MS_input" id="MS_input" autofocus>
+    </li>
+  </ul>
+  <ul ng-show="showOptions" class="MS_options">
+    <li ng-show="filteredOptions.length === 0" class="MS_option MS_no-matches">No matches</li>
+    <li ng-repeat="option in filteredOptions = (options | filter:word | filter:filterAlreadyAdded())" ng-bind-html="highlight(option, word)" ng-mouseover="focusOption(option)" ng-click="addOption(option)" class="MS_option" ng-class="{MS_focus:isFocused(option)}">
+      {{option}}
+    </li>
+  </ul>
+  <span class="MS_input" id="MS_words-width">{{word}}</span>
+</form>

@@ -1,0 +1,74 @@
+/*
+  Example of a multiselect theme.
+*/
+
+$width: 500px;
+$color: #333333;
+$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$input-border: 1px solid #BBBBBB;
+$word-border: 1px solid #DDDDDD;
+$word-border-radius: 2px;
+$word-bg-color: #EEEEEE;
+$word-font-weight: 200;
+$remove-color: #BBBBBB;
+$error-color: #EE5F5B;
+$focus-bg-color: #3875D7;
+$focus-color: #FFFFFF;
+
+.MS_form {
+  width: $width;
+  color: $color;
+  font-family: $font-family;
+}
+
+.MS_list {
+  border: $input-border;
+}
+
+.MS_word {
+  border: $word-border;
+  border-radius: $word-border-radius;
+  background-color: $word-bg-color;
+  font-weight: $word-font-weight;
+}
+
+.MS_remove {
+  color: $remove-color;
+  vertical-align: top;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.MS_error {
+  color: $error-color;
+}
+
+.MS_options {
+  position: absolute;
+  z-index: 2;
+  border: $input-border;
+  border-top: 0;
+  padding: 0.3em;
+  width: $width;
+  background-color: #FFFFFF;
+  font-size: 0.9em;
+}
+
+.MS_open {
+  border-bottom: 0;
+}
+
+.MS_option {
+  padding: 0.3em 0.5em;
+}
+
+.MS_focus {
+  background-color: $focus-bg-color;
+  color: $focus-color;
+}
+
+.MS_no-matches {
+  background-color: $word-bg-color;
+}

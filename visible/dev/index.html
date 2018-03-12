@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A directive to show/hide an element using visibility CSS property" />
+  <meta name="author" content="Victor Cazanave" />
+  <link rel="stylesheet" type="text/css" href="../../common/style/common.css">
+  <title>Visible</title>
+</head>
+
+<body ng-controller="MainCtrl">
+  <header>
+    <h1>Visible</h1>
+    <p>
+      This is an example of the visible directive. Like the ng-show standard directive, it can show/hide an element but using the visibility CSS property.
+      <br/>
+      <a href="https://github.com/VictorCazanave/widgets/tree/dev/visible" title="See source code on GitHub" target="_blank">Source code</a>
+    </p>
+  </header>
+  <section>
+    <form>
+      <label for="show">Show name</label>
+      <input ng-model="isVisible" ng-value="true" type="radio" name="isVisible" id="show"><br/>
+      <label for="hide">Hide name</label>
+      <input ng-model="isVisible" ng-value="false" type="radio" name="isVisible" id="hide">
+    </form>
+    <q>
+      Good morning, my name is
+      <span ng-visible="{{isVisible}}">Bond</span>...
+      <span ng-visible="{{isVisible}}">James Bond</span>.
+    </q>
+  </section>
+
+  <script type="text/javascript" src="lib/angular/angular.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="widget/visible.js"></script>
+</body>
+
+</html>
